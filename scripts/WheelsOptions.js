@@ -1,11 +1,14 @@
-const changeHandler = (changeEvent) => {
+import { setWheelChoice } from "./TransientState.js";
+
+const handleWheelChoice = (changeEvent) => {
   if (changeEvent.target.id === "wheel") {
-    const chosenOption = changeEvent.target.value;
-    console.log(parseInt(chosenOption));
+    const wheelId = parseInt(changeEvent.target.value);
+    console.log("Wheel ID selected", wheelId);
+    setWheelChoice(wheelId);
   }
 };
 
-document.addEventListener("change", changeHandler);
+document.addEventListener("change", handleWheelChoice);
 
 export const WheelsOptions = async () => {
   const response = await fetch("http://localhost:8088/wheels");
