@@ -13,7 +13,7 @@ const render = async () => {
   const container = document.querySelector("#container");
 
   const composedHTML = `
-        <h1>Kneel Diamonds</h1>
+        <h1>Cars 'R Us: Personal Car Builder</h1>
     
         <article class="choices">
             <section class="choices__paints options">
