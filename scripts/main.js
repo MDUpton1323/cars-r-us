@@ -2,6 +2,8 @@ import { PaintOptions } from "./PaintOptions.js";
 import { InteriorOptions } from "./InteriorOptions.js";
 import { WheelsOptions } from "./WheelsOptions.js";
 import { TechnologyOptions } from "./TechnologyOptions.js";
+import { CustomOrder } from "./PlaceOrder.js";
+import { Orders } from "./CustomOrders.js";
 
 const render = async () => {
   console.log("Render function called");
@@ -9,6 +11,8 @@ const render = async () => {
   const interiorOptionsHTML = await InteriorOptions();
   const wheelOptionsHTML = await WheelsOptions();
   const techonologyOptionsHTML = await TechnologyOptions();
+  const placeOrderHTML = CustomOrder();
+  const ordersHTML = await Orders();
 
   const container = document.querySelector("#container");
 
@@ -38,16 +42,21 @@ const render = async () => {
         </article>
     
         <article class="order">
-                
+                ${placeOrderHTML}
         </article>
     
         <article class="customOrders">
             <h2>Custom Car Orders</h2>
-                
+                ${ordersHTML}
         </article>
     `;
 
   container.innerHTML = composedHTML;
 };
+
+document.addEventListener("newCustomOrderPlaced", (event) => {
+  console.log("State of data has changed. Regenerating HTML...");
+  render();
+});
 
 render();

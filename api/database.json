@@ -21,7 +21,7 @@
       "price": 15000
     }
   ],
-  "interior": [
+  "interiors": [
     {
       "id": 1,
       "style": "Beige Fabric",
@@ -85,6 +85,22 @@
       "id": 4,
       "wheel": "20-inch Pair Spoke Black",
       "price": 4000
+    }
+  ],
+  "orders": [
+    {
+      "paintId": 4,
+      "interiorId": 3,
+      "wheelId": 4,
+      "technologyId": 4,
+      "id": 1
+    },
+    {
+      "paintId": 3,
+      "interiorId": 4,
+      "wheelId": 4,
+      "technologyId": 3,
+      "id": 2
     }
   ]
 }

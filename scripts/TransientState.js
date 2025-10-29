@@ -1,12 +1,12 @@
 const transientState = {
-  paintsId: 0,
+  paintId: 0,
   interiorId: 0,
   wheelId: 0,
   technologyId: 0,
 };
 
 export const setPaintChoice = (chosenPaint) => {
-  transientState.paintsId = chosenPaint;
+  transientState.paintId = chosenPaint;
 };
 
 export const setInteriorChoice = (chosenInterior) => {
@@ -23,7 +23,7 @@ export const setTechnologyChoice = (chosenTechnology) => {
 
 export const saveCustomOrder = async () => {
   if (
-    transientState.paintsId === 0 ||
+    transientState.paintId === 0 ||
     transientState.interiorId === 0 ||
     transientState.wheelId === 0 ||
     transientState.technologyId === 0

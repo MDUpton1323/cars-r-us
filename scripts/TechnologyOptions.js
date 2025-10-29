@@ -1,11 +1,14 @@
-const changeHandler = (changeEvent) => {
+import { setTechnologyChoice } from "./TransientState.js";
+
+const handleTechnologyChoice = (changeEvent) => {
   if (changeEvent.target.id === "packages") {
-    const chosenOption = changeEvent.target.value;
-    console.log(parseInt(chosenOption));
+    const technologyId = parseInt(changeEvent.target.value);
+    console.log("Technology ID selected", technologyId);
+    setTechnologyChoice(technologyId);
   }
 };
 
-document.addEventListener("change", changeHandler);
+document.addEventListener("change", handleTechnologyChoice);
 
 export const TechnologyOptions = async () => {
   const response = await fetch("http://localhost:8088/technologies");

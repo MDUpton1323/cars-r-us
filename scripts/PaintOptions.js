@@ -1,11 +1,14 @@
-const changeHandler = (changeEvent) => {
+import { setPaintChoice } from "./TransientState.js";
+
+const handlePaintChoice = (changeEvent) => {
   if (changeEvent.target.id === "paint") {
-    const chosenOption = changeEvent.target.value;
-    console.log(parseInt(chosenOption));
+    const paintId = parseInt(changeEvent.target.value);
+    console.log("Paint ID selected", paintId);
+    setPaintChoice(paintId);
   }
 };
 
-document.addEventListener("change", changeHandler);
+document.addEventListener("change", handlePaintChoice);
 
 export const PaintOptions = async () => {
   const response = await fetch("http://localhost:8088/paints");
